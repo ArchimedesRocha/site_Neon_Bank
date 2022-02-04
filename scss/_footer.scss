@@ -1,0 +1,287 @@
+footer {
+  background-color: $cor10;
+  padding-top: 4.9rem;
+  .container {
+    padding-bottom: 0;
+
+    .top {
+      @include flex(row, center, space-between);
+      border-bottom: 1px solid rgba(73, 196, 253, 0.2);
+      padding-bottom: 4.8rem;
+      margin-bottom: 5.7rem;
+      .share {
+        display: flex;
+        align-items: center;
+        span {
+          font-size: 1.4rem;
+          line-height: 125%;
+          text-align: right;
+          color: rgba(255, 255, 255, 0.7);
+        }
+        ul {
+          display: flex;
+          align-items: center;
+          margin-left: 3rem;
+          li {
+            &:not(:first-child) {
+              margin-left: 3rem;
+            }
+          }
+        }
+      }
+    }
+
+    .main {
+      @include flex(row, flex-start, space-between);
+      border-bottom: 1px solid rgba(73, 196, 253, 0.2);
+      padding-bottom: 6.2rem;
+      margin-bottom: 3.9rem;
+      nav {
+        @include flex(row, flex-start, space-between);
+        width: 100%;
+        max-width: 86rem;
+        .item {
+          strong {
+            display: inline-block;
+            margin-bottom: 2.5rem;
+            font-family: "Poppins", sans-serif;
+            font-weight: 600;
+            font-size: 1.6rem;
+            line-height: 125%;
+            color: $cor36;
+          }
+          ul {
+            li {
+              &:not(:last-child) {
+                margin-bottom: 2.9rem;
+              }
+              a {
+                font-family: "Inter", sans-serif;
+                font-size: 1.4rem;
+                line-height: 17px;
+                color: rgba(255, 255, 255, 0.7);
+              }
+            }
+          }
+        }
+      }
+      .btns {
+        width: 100%;
+        max-width: 28rem;
+        button {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          height: 7.6rem;
+          padding-left: 2.5rem;
+          background-color: rgba(0, 164, 240, 0.23);
+          border-radius: 0.6rem;
+          &:not(:last-child) {
+            margin-bottom: 2.4rem;
+          }
+          .info {
+            margin-left: 2.4rem;
+            strong {
+              display: block;
+              text-align: left;
+              font-weight: bold;
+              font-size: 1.4rem;
+              line-height: 150%;
+              color: $cor36;
+            }
+            span {
+              display: block;
+              text-align: left;
+              font-size: 1.4rem;
+              line-height: 17px;
+              color: rgba(255, 255, 255, 0.7);
+            }
+          }
+        }
+      }
+    }
+    .msg {
+      display: flex;
+      align-items: flex-start;
+      border-bottom: 4px solid $cor20;
+      padding-bottom: 3.4rem;
+      .icon {
+        font-size: 1.8rem;
+      }
+      p {
+        width: 100%;
+        max-width: 66rem;
+        margin-left: 2.5rem;
+        font-family: "Inter", sans-serif;
+        font-size: 1.4rem;
+        line-height: 150%;
+        color: rgba(255, 255, 255, 0.8);
+      }
+    }
+  }
+
+  @include responsive(1060px) {
+    .container {
+      .main {
+        nav {
+          max-width: 76rem;
+        }
+      }
+    }
+  }
+
+  @include responsive(1000px) {
+    .container {
+      .main {
+        width: 100%;
+        max-width: 100%;
+        position: relative;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 9rem;
+        padding-bottom: 6rem;
+        margin-bottom: 1.5rem;
+        nav {
+          width: 100%;
+          max-width: 100%;
+          flex-wrap: wrap;
+          justify-content: flex-start;
+          .item {
+            width: 100%;
+            max-width: 33%;
+            margin-bottom: 5rem;
+          }
+        }
+        .btns {
+          position: absolute;
+          bottom: 14rem;
+          right: 8rem;
+        }
+      }
+      .msg {
+        flex-direction: column;
+        align-items: center;
+        p {
+          margin-left: 0;
+          text-align: center;
+          margin-top: 1.5rem;
+        }
+      }
+    }
+  }
+
+  @include responsive(900px) {
+    .container {
+      .main {
+        .btns {
+          right: 5rem;
+        }
+      }
+    }
+  }
+
+  @include responsive(800px) {
+    .container {
+      .main {
+        padding-left: 0;
+        .btns {
+          right: 0;
+        }
+      }
+    }
+  }
+
+  @include responsive(600px) {
+    .container {
+      .main {
+        .btns {
+          width: 20.5rem;
+          button {
+            padding-left: 0;
+            img {
+              display: none;
+            }
+            .info {
+              width: 100%;
+              margin: 0;
+              strong,
+              span {
+                text-align: center;
+                padding: 0 1rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include responsive(480px) {
+    .container {
+      .top {
+        flex-direction: column;
+        padding-bottom: 0;
+        img {
+          margin-bottom: 4rem;
+        }
+        .share {
+          flex-direction: column;
+          justify-content: center;
+          span {
+            font-size: 2rem;
+          }
+          ul {
+            margin: 4rem 0;
+            li {
+              a {
+                img {
+                  width: 3.5rem;
+                  height: 3.5rem;
+                  margin-bottom: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+      .main {
+        nav {
+          padding-left: 5.5rem;
+          .item {
+            max-width: 50%;
+            margin-bottom: 5.3rem;
+          }
+        }
+        .btns {
+          width: 100%;
+          max-width: 100%;
+          position: relative;
+          bottom: 0;
+          button {
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+
+  @include responsive(460px) {
+    .container {
+      .main {
+        nav {
+          padding-left: 3.5rem;
+        }
+      }
+    }
+  }
+
+  @include responsive(380px) {
+    .container {
+      .main {
+        nav {
+          padding-left: 0;
+        }
+      }
+    }
+  }
+}

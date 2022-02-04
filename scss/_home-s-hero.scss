@@ -1,0 +1,349 @@
+.s-hero {
+  width: 100%;
+  height: 78.6rem;
+  background: url(../img/background/bg-hero.svg) no-repeat center center;
+  padding-top: 17.5rem;
+  .container {
+    @include flex(row, flex-start, space-between);
+  }
+  .text {
+    width: 100%;
+    max-width: 68.4rem;
+    h3 {
+      color: rgba(255, 255, 255, 0.8);
+      font-weight: 600;
+      margin-bottom: 3.2rem;
+    }
+    h1 {
+      color: $cor36;
+      margin-bottom: 3.9rem;
+    }
+    ul {
+      width: 100%;
+      max-width: 62.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 6.4rem;
+      li {
+        display: flex;
+        align-items: center;
+        .icon {
+          width: 6.8rem;
+          height: 4.8rem;
+          background: linear-gradient(
+            180deg,
+            rgba(53, 203, 226, 0.4) 0%,
+            rgba(53, 202, 226, 0) 100%
+          );
+          border-radius: 50%;
+          @include flex(row, center, center);
+          margin-right: 1.2rem;
+        }
+        span {
+          font-size: 1.8rem;
+          line-height: 2.2rem;
+          color: $cor36;
+        }
+      }
+    }
+  }
+  .area-image {
+    width: 100%;
+    max-width: 70.6rem;
+    margin-right: -17.4rem;
+    h2 {
+      margin-bottom: 6.7rem;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.5);
+      opacity: 0.4;
+      font-weight: 600;
+    }
+    .image {
+      position: relative;
+      width: 100%;
+      height: 54.1rem;
+      top: 3.5rem;
+      img {
+        position: absolute;
+      }
+      .card-front {
+        max-width: 43.5rem;
+        top: 4.1rem;
+        left: 0;
+        z-index: 2;
+        animation: floating 6s infinite;
+      }
+      .card-back {
+        max-width: 35.2rem;
+        bottom: 4.6rem;
+        right: 8.676rem;
+        z-index: 1;
+        animation: floating 8s infinite;
+      }
+      .circle-card {
+        max-width: 55.3rem;
+        top: 2.8rem;
+        right: 4.3rem;
+      }
+    }
+  }
+  @include responsive(1440px) {
+    .area-image {
+      margin-right: -13.4rem;
+      h2 {
+        margin-bottom: 4.7rem;
+      }
+    }
+  }
+
+  @include responsive(1366px) {
+    height: 71.6rem;
+    .area-image {
+      margin-right: -8rem;
+      h2 {
+        margin-bottom: -1.3rem;
+      }
+      .image {
+        .card-back {
+          right: 4rem;
+        }
+      }
+    }
+  }
+
+  @include responsive(1280px) {
+    height: 71.6rem;
+    .area-image {
+      .image {
+        .card-back {
+          bottom: 2.6rem;
+        }
+      }
+    }
+  }
+
+  @include responsive(1150px) {
+    padding-top: 14.5rem;
+    height: 61.6rem;
+    .text {
+      ul {
+        margin-top: 2.5rem;
+      }
+    }
+    .area-image {
+      margin-right: -3rem;
+      h2 {
+        margin-bottom: 1.5rem;
+      }
+      .image {
+        height: 45rem;
+        .card-front {
+          top: 0.1rem;
+          left: 5.5rem;
+          max-width: 35rem;
+        }
+        .card-back {
+          max-width: 29rem;
+        }
+        .circle-card {
+          top: -0.2rem;
+          max-width: 46rem;
+        }
+      }
+    }
+  }
+
+  @include responsive(991px) {
+    height: 89.1rem;
+    background-size: cover;
+
+    .container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .text {
+      @include flex(column, center, center);
+      margin-bottom: 5rem;
+      max-width: 100%;
+      h3 {
+        text-align: center;
+      }
+      h1 {
+        text-align: center;
+      }
+    }
+
+    .area-image {
+      .image {
+        .card-front {
+          max-width: 26rem;
+          top: -2.9rem;
+          left: 15.5rem;
+        }
+        .card-back {
+          max-width: 22rem;
+          right: 18.5rem;
+          bottom: 18.6rem;
+        }
+        .circle-card {
+          max-width: 33rem;
+          top: -3.2rem;
+          right: 18.3rem;
+        }
+      }
+    }
+  }
+
+  @include responsive(600px) {
+    height: 94.1rem;
+    .area-image {
+      .image {
+        .card-front {
+          left: 7.5rem;
+        }
+        .card-back {
+          right: 12.5rem;
+        }
+        .circle-card {
+          right: 12.3rem;
+        }
+      }
+    }
+  }
+
+  @include responsive(500px) {
+    padding-top: 10.5rem;
+    height: 99.1rem;
+    .text {
+      ul {
+        flex-direction: column;
+      }
+    }
+    .area-image {
+      .image {
+        .card-front {
+          left: 2.5rem;
+        }
+        .card-back {
+          right: 7.5rem;
+        }
+        .circle-card {
+          right: 7.3rem;
+        }
+      }
+    }
+  }
+
+  @include responsive(480px) {
+    .text {
+      ul {
+        li {
+          .icon {
+            width: 4.8rem;
+          }
+        }
+      }
+    }
+    height: 96.1rem;
+    .area-image {
+      .image {
+        .circle-card {
+          right: 6.3rem;
+        }
+      }
+    }
+  }
+
+  @include responsive(450px) {
+    .area-image {
+      .image {
+        .card-front {
+          max-width: 24rem;
+          left: 1.5rem;
+        }
+        .card-back {
+          max-width: 21rem;
+          right: 6.5rem;
+          bottom: 19.6rem;
+        }
+      }
+    }
+  }
+
+  @include responsive(420px) {
+    height: 93.1rem;
+    .area-image {
+      .image {
+        .card-front {
+          max-width: 22rem;
+          left: 3.5rem;
+        }
+        .card-back {
+          max-width: 20rem;
+          right: 7.5rem;
+          bottom: 21.6rem;
+        }
+        .circle-card {
+          max-width: 27rem;
+          right: 7.3rem;
+        }
+      }
+    }
+  }
+
+  @include responsive(375px) {
+    height: 101.1rem;
+    .area-image {
+      h2 {
+        text-align: left;
+        font-size: 3.8rem;
+      }
+      .image {
+        .card-front {
+          max-width: 22rem;
+          left: 0.5rem;
+        }
+        .card-back {
+          max-width: 20rem;
+          right: 6.5rem;
+          bottom: 21.6rem;
+        }
+        .circle-card {
+          max-width: 27rem;
+          right: 6.3rem;
+        }
+      }
+    }
+  }
+
+  @include responsive(330px) {
+    .area-image {
+      margin-right: -6.5rem;
+      h2 {
+        font-size: 2.9rem;
+      }
+      .image {
+        .card-back {
+          right: 5.5rem;
+        }
+        .circle-card {
+          right: 5.3rem;
+        }
+      }
+    }
+  }
+
+  @keyframes floating {
+    0% {
+      transform: translateY(0);
+    }
+    66% {
+      transform: translateY(-15px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+}

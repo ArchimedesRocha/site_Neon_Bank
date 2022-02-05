@@ -1,17 +1,111 @@
 header {
   display: flex;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 8.8rem;
   border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  z-index: 100;
+  transition: all 0.3s;
   .container {
     @include flex(row, center, space-between);
+  }
+  .logo {
+    display: inline-block;
+    background: url(../img/logo.svg) no-repeat center center;
+    width: 13.2rem;
+    height: 3rem;
+    background-size: 100%;
+  }
+  &.fixed-menu {
+    background-color: $cor36;
+    box-shadow: 0 0 3rem 0 rgba(0, 0, 0, 0.3);
+    .logo {
+      background-image: url(../img/logo-color.svg);
+    }
+    nav {
+      ul {
+        li {
+          a {
+            color: $cor32;
+            &:hover {
+              color: $cor11;
+            }
+          }
+        }
+      }
+      .btn-tertiary {
+        color: $cor11;
+        border: 0.1rem solid $cor11;
+        &:hover {
+          background-color: $cor11;
+          color: $cor36;
+        }
+      }
+    }
   }
   nav {
     display: flex;
     align-items: center;
+    position: relative;
+    .dropdown-produtos {
+      position: absolute;
+      top: 7rem;
+      left: -13rem;
+      width: 100%;
+      max-width: 37.3rem;
+      background: $cor36;
+      border-radius: 0.6rem;
+      padding: 4rem;
+      z-index: 5;
+      //Efeito para vir de baixo
+      transform: translateY(2rem);
+      // Forma para esconder e poder aplicar transition
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s;
+      &.active {
+        opacity: 1;
+        pointer-events: all;
+        transform: translateY(0);
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        width: 29.3rem;
+        height: 0.5rem;
+        background: $cor20;
+        border-radius: 1.2rem 1.2rem 0 0;
+        z-index: 2;
+      }
+      a.item-produtos {
+        &:not(last-child) {
+          display: block;
+          margin-bottom: 2.8rem;
+        }
+        &:hover {
+          strong {
+            color: $cor10;
+          }
+        }
+        strong {
+          font-weight: 600;
+          font-size: 1.6rem;
+          line-height: 1.9rem;
+          color: $cor32;
+          display: block;
+          margin-bottom: 0.4rem;
+          transition: all 0.3s;
+        }
+        p {
+          font-size: 1.4rem;
+          line-height: 150%;
+          color: $cor33;
+        }
+      }
+    }
     ul {
       display: flex;
       align-items: center;
@@ -30,19 +124,21 @@ header {
           transition: all 0.3s;
           &:hover {
             color: $cor20;
+            transition: all 0.3s;
           }
         }
       }
     }
   }
-
-  .btn-mobile {
+  .button-mobile {
     display: none;
-    margin-left: 4rem;
   }
 
   @include responsive(1110px) {
     nav {
+      .dropdown-produtos {
+        display: none;
+      }
       ul {
         margin-right: 3rem;
         li {
@@ -59,11 +155,9 @@ header {
       max-width: 10.8rem;
     }
     nav {
-      ul {
-        display: none;
-      }
+      display: none;
     }
-    .btn-mobile {
+    .button-mobile {
       display: block;
     }
   }
@@ -73,6 +167,68 @@ header {
     nav {
       .btn-tertiary {
         display: none;
+      }
+    }
+  }
+}
+
+.menu-mobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2022;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+  }
+  aside {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 75%;
+    height: 100%;
+    background: $cor36;
+    padding: 3rem;
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+    .logo {
+      max-width: 15rem;
+      margin-bottom: 4rem;
+    }
+    ul {
+      li {
+        a {
+          display: block;
+          padding: 1.5rem 0;
+          font-size: 1.8rem;
+          color: $cor32;
+        }
+      }
+    }
+  }
+}
+
+.menu-opened {
+  overflow: hidden;
+  .menu-mobile {
+    opacity: 1;
+    pointer-events: all;
+    aside {
+      transform: translateX(0%);
+      @include flex(column, center, flex-start);
+      padding-top: 10rem;
+      ul {
+        @include flex(column, center, center);
       }
     }
   }

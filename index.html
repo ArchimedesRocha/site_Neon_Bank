@@ -13,7 +13,7 @@
     />
     <!--Favicon-->
     <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
-    
+
     <link
       rel="stylesheet"
       href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
@@ -65,25 +65,65 @@
   </head>
 
   <body>
-    <header>
+    <header id="js-header">
       <div class="container">
-        <a href="" class="logo">
-          <img src="./img/logo.svg" alt="" />
-        </a>
+        <a href="" class="logo"> </a>
         <nav>
+          <div class="dropdown-produtos js-dropdown-produtos">
+            <a href="#" target="_self" class="item-produtos">
+              <strong>Cartão de crédito</strong>
+              <p>Cartão de crédito sem anuidade</p>
+            </a>
+            <a href="#" target="_self" class="item-produtos">
+              <strong>Cartão pré-pago</strong>
+              <p>Cartão de débito internacional Neon</p>
+            </a>
+            <a href="#" target="_self" class="item-produtos">
+              <strong>Neon Mais</strong>
+              <p>4 saques grátis para quem compra com a Neon</p>
+            </a>
+            <a href="#" target="_self" class="item-produtos">
+              <strong>Investimentos</strong>
+              <p>A evolução da poupança</p>
+            </a>
+            <a href="#" target="_self" class="item-produtos">
+              <strong>Empréstimo pessoal</strong>
+              <p>Faça uma simulação de empréstimo pessoal</p>
+            </a>
+          </div>
           <ul>
-            <li><a href="">Produtos Neon</a></li>
-            <li><a href="">Conta digital PJ</a></li>
+            <li>
+              <a href="" class="js-btn-dropdown-produtos">Produtos Neon</a>
+            </li>
+            <li>
+              <a href="">Conta digital PJ</a>
+            </li>
             <li><a href="">Quem somos</a></li>
             <li><a href="">Blog</a></li>
             <li><a href="">Ajuda</a></li>
           </ul>
           <button class="btn-tertiary">Abra sua conta digital</button>
-
-          <button class="btn-mobile">
-            <img src="./img/btn-mobile.svg" alt="" />
-          </button>
         </nav>
+        <button class="button-mobile" id="js-btn-menu-mobile">
+          <img src="./img/btn-mobile.svg" />
+        </button>
+        <div class="menu-mobile">
+          <div class="overlay js-overlay"></div>
+          <aside>
+            <img src="./img/logo-color.svg" class="logo" alt="" />
+            <ul>
+              <li>
+                <a href="" class="js-btn-dropdown-produtos">Produtos Neon</a>
+              </li>
+              <li>
+                <a href="">Conta digital PJ</a>
+              </li>
+              <li><a href="">Quem somos</a></li>
+              <li><a href="">Blog</a></li>
+              <li><a href="">Ajuda</a></li>
+            </ul>
+          </aside>
+        </div>
       </div>
     </header>
 
@@ -514,7 +554,7 @@
         </div>
       </div>
     </footer>
-
+    <script src="./js/scripts.js"></script>
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>

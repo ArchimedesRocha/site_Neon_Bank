@@ -65,6 +65,7 @@ header {
       opacity: 0;
       pointer-events: none;
       transition: all 0.3s;
+      box-shadow: 0.3rem 0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.1);
       &.active {
         opacity: 1;
         pointer-events: all;
